@@ -1,0 +1,17 @@
+[general]
+name=AquaRed
+qgisMinimumVersion=3.22
+qgisMaximumVersion=3.99
+description=Diseñador y Modelador Topológico de Redes de Agua Potable con Offset Vial, Acometidas, Normativa IDAAN y Exportación a EPANET
+about=Plugin integral para diseño automatizado de acueductos: descarga calles/casas de OSM o usa capas locales, muestrea elevaciones DEM, genera tuberías matrices con offset consistente preservando ejes viales, traza acometidas domiciliarias, calcula demandas nodales mediante el método oficial IDAAN por tramo, valida topología y exporta directamente a EPANET (.INP).
+version=1.0.0
+author=MakxxKansca
+email=makxx16@gmail.com
+category=Hydraulics
+tags=water supply,epanet,acueducto,idaan,redes de agua,pipe network,hydraulics,sanitary engineering
+experimental=False
+deprecated=False
+icon=icon.png
+homepage=https://github.com/MakxxKansca/AquaRed
+tracker=https://github.com/MakxxKansca/AquaRed/issues
+repository=https://github.com/MakxxKansca/AquaRed
