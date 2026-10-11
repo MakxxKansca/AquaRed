@@ -90,13 +90,16 @@ class AquaRedDockWidget(QDockWidget):
             "Red Rural / Comunitaria (Norma MINSA 80 gal)",
             "Personalizado..."
         ])
+        self.cmb_perfil.setToolTip("Selecciona una plantilla predeterminada (Urbana o Rural) o usa 'Personalizado...'")
         h_prof.addWidget(self.cmb_perfil)
         layout_perfil.addLayout(h_prof)
 
         # Botones de Cargar / Guardar JSON
         h_json_btns = QHBoxLayout()
         self.btn_cargar_json = QPushButton("📂 Cargar JSON")
+        self.btn_cargar_json.setToolTip("Carga un archivo de perfil de diseño .json previamente guardado o personalizado")
         self.btn_guardar_json = QPushButton("💾 Guardar JSON")
+        self.btn_guardar_json.setToolTip("Exporta todos los valores actuales del panel (dotación, offset, zanja, diámetros) a un archivo .json portable")
         h_json_btns.addWidget(self.btn_cargar_json)
         h_json_btns.addWidget(self.btn_guardar_json)
         layout_perfil.addLayout(h_json_btns)

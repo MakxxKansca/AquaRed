@@ -73,6 +73,29 @@
 
 ---
 
+## 📝 Personalización de Perfiles JSON
+
+AquaRed permite guardar y cargar configuraciones completas de diseño mediante archivos `.json` portables:
+- **Desde la Interfaz:** Modifica los valores en el panel y pulsa **💾 Guardar JSON**. Para volver a usarlo, pulsa **📂 Cargar JSON**.
+- **Editando el archivo manualmente:** Puedes modificar los campos de [`perfil_plantilla.json`](../perfil_plantilla.json) con cualquier editor de texto.
+
+### Parámetros del Archivo JSON
+- `nombre_perfil`: Nombre visible en la lista desplegable.
+- `clasificacion`: `"urbano"` o `"rural"`.
+- `dotacion_gal_hab_dia`: Consumo por habitante al día (ej. 100.0, 80.0, 120.0).
+- `presion_min_psi`: Presión mínima dinámica en psi (ej. 20.0, 14.0).
+- `diam_min_troncal`: Diámetro mínimo de la tubería principal (ej. `"4\""`, `"3\""`).
+- `diam_min_ramal`: Diámetro mínimo de ramales secundarios (ej. `"3\""`, `"2\""`).
+- `factor_pico_fmh`: Factor de caudal máximo horario (ej. 2.00, 2.16).
+- `hab_por_vivienda`: Densidad habitacional (ej. 5.0).
+- `offset_tuberias_m`: Distancia de offset en metros respecto al eje vial (ej. 5.00, 4.00).
+- `profundidad_zanja_m`: Profundidad de excavación en metros (ej. 1.15, 1.10).
+- `altura_torre_tanque_m`: Altura de torre del tanque elevado en metros (ej. 15.00).
+- `tolerancia_snapping_m`: Tolerancia de auto-ensamblado en metros (ej. 0.75).
+- `umbral_acometida_m`: Distancia máxima para buscar la tubería más cercana (ej. 25.0).
+
+---
+
 ## 👤 Autor
 
 - **Autor:** **MakxxKansca**

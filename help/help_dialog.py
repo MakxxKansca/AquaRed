@@ -135,6 +135,113 @@ class AquaRedHelpDialog(QDialog):
         """)
         tabs.addTab(browser_epanet, "Exportación EPANET")
 
+        # TAB 5: Personalización de Perfiles JSON
+        browser_json = QTextBrowser()
+        browser_json.setHtml("""
+        <h2>Guía de Personalización de Perfiles JSON</h2>
+        <p>AquaRed permite guardar y cargar configuraciones completas de diseño mediante archivos <b>.json</b> portables. Esto permite reutilizar parámetros en proyectos similares o adaptarlos a normativas de otros países.</p>
+        
+        <h3>1. ¿Cómo crear y cargar un perfil JSON?</h3>
+        <ul>
+            <li><b>Desde la Interfaz Gráfica:</b> Modifica los valores en el panel lateral (dotación, offset, zanja, diámetros, etc.) y pulsa el botón <b>💾 Guardar JSON</b>. Para reutilizarlo en otro proyecto, pulsa <b>📂 Cargar JSON</b>.</li>
+            <li><b>Editando el archivo manualmente:</b> Puedes crear un archivo <code>mi_perfil.json</code> con cualquier editor de texto (Notepad, VSCode) respetando la estructura de claves descrita abajo.</li>
+        </ul>
+
+        <h3>2. Diccionario de Claves del Archivo JSON</h3>
+        <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; width:100%;">
+            <tr style="background-color:#e6f2ff;">
+                <th>Clave JSON</th>
+                <th>Tipo</th>
+                <th>Descripción y Rango / Opciones</th>
+            </tr>
+            <tr>
+                <td><code>nombre_perfil</code></td>
+                <td>Texto</td>
+                <td>Nombre que se mostrará en el menú desplegable del plugin.</td>
+            </tr>
+            <tr>
+                <td><code>clasificacion</code></td>
+                <td>Texto</td>
+                <td><code>"urbano"</code> o <code>"rural"</code>. Define la base normativa.</td>
+            </tr>
+            <tr>
+                <td><code>dotacion_gal_hab_dia</code></td>
+                <td>Número</td>
+                <td>Consumo por habitante al día en galones (ej. 100.0, 80.0, 120.0).</td>
+            </tr>
+            <tr>
+                <td><code>presion_min_psi</code></td>
+                <td>Número</td>
+                <td>Presión mínima dinámica requerida en psi (ej. 20.0, 14.0).</td>
+            </tr>
+            <tr>
+                <td><code>diam_min_troncal</code></td>
+                <td>Texto</td>
+                <td>Diámetro mínimo para tubería principal (<code>"4\""</code>, <code>"3\""</code>, etc.).</td>
+            </tr>
+            <tr>
+                <td><code>diam_min_ramal</code></td>
+                <td>Texto</td>
+                <td>Diámetro mínimo para ramales secundarios (<code>"3\""</code>, <code>"2\""</code>, etc.).</td>
+            </tr>
+            <tr>
+                <td><code>factor_pico_fmh</code></td>
+                <td>Número</td>
+                <td>Factor de caudal máximo horario (ej. 2.00 para urbano, 2.16 para rural).</td>
+            </tr>
+            <tr>
+                <td><code>hab_por_vivienda</code></td>
+                <td>Número</td>
+                <td>Densidad habitacional (habitualmente 5.0 habitantes por vivienda).</td>
+            </tr>
+            <tr>
+                <td><code>offset_tuberias_m</code></td>
+                <td>Número</td>
+                <td>Desplazamiento paralelo en metros respecto al eje de calle (ej. 5.00, 4.00, 3.00).</td>
+            </tr>
+            <tr>
+                <td><code>profundidad_zanja_m</code></td>
+                <td>Número</td>
+                <td>Profundidad de excavación al lomo/batea del tubo en metros (ej. 1.15, 1.10).</td>
+            </tr>
+            <tr>
+                <td><code>altura_torre_tanque_m</code></td>
+                <td>Número</td>
+                <td>Altura de la torre del tanque elevado en metros (ej. 15.00, 10.00).</td>
+            </tr>
+            <tr>
+                <td><code>tolerancia_snapping_m</code></td>
+                <td>Número</td>
+                <td>Tolerancia de auto-ensamblado en metros para unir vértices (ej. 0.75, 0.50).</td>
+            </tr>
+            <tr>
+                <td><code>umbral_acometida_m</code></td>
+                <td>Número</td>
+                <td>Distancia máxima admisible para conectar una casa a la tubería (ej. 25.0, 30.0).</td>
+            </tr>
+        </table>
+
+        <h3>3. Ejemplo de Archivo JSON Completo</h3>
+        <pre style="background-color:#f4f4f4; padding:10px; border-radius:4px; font-size:11px;">
+{
+    "nombre_perfil": "Acueducto Urbano 100 gal",
+    "clasificacion": "urbano",
+    "dotacion_gal_hab_dia": 100.0,
+    "presion_min_psi": 20.0,
+    "diam_min_troncal": "4\"",
+    "diam_min_ramal": "3\"",
+    "factor_pico_fmh": 2.00,
+    "hab_por_vivienda": 5.0,
+    "offset_tuberias_m": 5.00,
+    "profundidad_zanja_m": 1.15,
+    "altura_torre_tanque_m": 15.00,
+    "tolerancia_snapping_m": 0.75,
+    "umbral_acometida_m": 25.0
+}
+        </pre>
+        """)
+        tabs.addTab(browser_json, "Personalización JSON")
+
         layout.addWidget(tabs)
 
         btn_box = QDialogButtonBox(QDialogButtonBox.Ok)

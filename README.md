@@ -98,6 +98,64 @@ Copia la carpeta `AquaRed` en el directorio de plugins de tu perfil de usuario d
 
 ---
 
+## 📝 Guía de Personalización de Perfiles JSON
+
+AquaRed incluye un sistema modular de perfiles en formato **JSON** que permite guardar, cargar y transferir configuraciones completas de diseño para reutilizarlas en cualquier proyecto o adaptarlas a normativas locales.
+
+### ¿Cómo guardar y cargar perfiles?
+1. **Desde la Interfaz Gráfica (Recomendado):**
+   - Modifica los valores deseados directamente en el panel lateral de AquaRed (dotación, offset, diámetros, zanja, etc.).
+   - Pulsa el botón **💾 Guardar JSON** y elige dónde guardar el archivo (ej. `mi_perfil.json`).
+   - Para aplicar ese perfil en otro proyecto o equipo, pulsa **📂 Cargar JSON** y selecciona el archivo.
+2. **Editando el archivo manualmente:**
+   - Puedes abrir cualquier archivo `.json` con un editor de texto (Notepad, VSCode) y ajustar los valores numéricos o de texto.
+   - En el repositorio se incluye la plantilla lista para usar: [`perfil_plantilla.json`](perfil_plantilla.json).
+
+### Diccionario de Parámetros del Perfil JSON
+
+| Clave JSON | Tipo de Dato | Descripción y Valores Permitidos |
+| :--- | :---: | :--- |
+| `nombre_perfil` | `string` | Nombre descriptivo que aparecerá en el menú desplegable del plugin. |
+| `clasificacion` | `string` | `"urbano"` o `"rural"`. Define el marco regulatorio base. |
+| `dotacion_gal_hab_dia` | `float` | Consumo por habitante al día en galones (ej. `100.0`, `80.0`, `120.0`). |
+| `presion_min_psi` | `float` | Presión mínima dinámica exigida en psi (ej. `20.0` para urbano, `14.0` para rural). |
+| `diam_min_troncal` | `string` | Diámetro nominal mínimo para la tubería matriz principal (`"4\""`, `"3\""`, etc.). |
+| `diam_min_ramal` | `string` | Diámetro nominal mínimo para ramales secundarios (`"3\""`, `"2\""`, etc.). |
+| `factor_pico_fmh` | `float` | Multiplicador de Caudal Máximo Horario (ej. `2.00` urbano IDAAN, `2.16` rural MINSA). |
+| `hab_por_vivienda` | `float` | Densidad promedio de habitantes por casa (ej. `5.0`). |
+| `offset_tuberias_m` | `float` | Distancia en metros para el offset paralelo de la tubería respecto al eje vial (ej. `5.00`). |
+| `lado_offset_preferencial`| `string` | `"interior"`, `"left"`, o `"right"`. Determina el lado preferente de trazado. |
+| `profundidad_zanja_m` | `float` | Profundidad de excavación al lomo/batea del tubo en metros (ej. `1.15`, `1.10`). |
+| `ancho_zanja_m` | `float` | Ancho de excavación de zanja en metros (ej. `0.60`). |
+| `altura_torre_tanque_m` | `float` | Altura del fuste o torre del tanque elevado en metros (ej. `15.00`). |
+| `cota_tanque_terreno_m` | `float` | Cota topográfica de desplante del tanque en msnm (ej. `100.00`). |
+| `tolerancia_snapping_m` | `float` | Radio de tolerancia de auto-ensamblado en metros para unir vértices (ej. `0.75`). |
+| `umbral_acometida_m` | `float` | Distancia máxima admisible para conectar una vivienda a la tubería (ej. `25.0`, `30.0`). |
+
+### Ejemplo de Archivo JSON Completo
+```json
+{
+    "nombre_perfil": "Urbanización Residencial 100 gal",
+    "clasificacion": "urbano",
+    "dotacion_gal_hab_dia": 100.0,
+    "presion_min_psi": 20.0,
+    "diam_min_troncal": "4\"",
+    "diam_min_ramal": "3\"",
+    "factor_pico_fmh": 2.00,
+    "hab_por_vivienda": 5.0,
+    "offset_tuberias_m": 5.00,
+    "lado_offset_preferencial": "interior",
+    "profundidad_zanja_m": 1.15,
+    "ancho_zanja_m": 0.60,
+    "altura_torre_tanque_m": 15.00,
+    "cota_tanque_terreno_m": 100.00,
+    "tolerancia_snapping_m": 0.75,
+    "umbral_acometida_m": 25.0
+}
+```
+
+---
+
 ## 🛠️ Estructura del Proyecto
 
 ```

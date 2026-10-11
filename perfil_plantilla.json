@@ -1,0 +1,29 @@
+{
+    "nombre_perfil": "Mi Perfil Personalizado de Acueducto",
+    "clasificacion": "urbano",
+    "dotacion_gal_hab_dia": 100.0,
+    "presion_min_psi": 20.0,
+    "diam_min_troncal": "4\"",
+    "diam_min_ramal": "3\"",
+    "factor_pico_fmh": 2.00,
+    "hab_por_vivienda": 5.0,
+    "offset_tuberias_m": 5.00,
+    "lado_offset_preferencial": "interior",
+    "profundidad_zanja_m": 1.15,
+    "ancho_zanja_m": 0.60,
+    "altura_torre_tanque_m": 15.00,
+    "cota_tanque_terreno_m": 100.00,
+    "tolerancia_snapping_m": 0.75,
+    "umbral_acometida_m": 25.0,
+    "fuente_calles": "layer",
+    "fuente_casas": "layer",
+    "generar_capas": {
+        "calles": true,
+        "casas": true,
+        "tuberias": true,
+        "acometidas": true,
+        "valvulas": true,
+        "demandas": true,
+        "exportar_inp": true
+    }
+}
