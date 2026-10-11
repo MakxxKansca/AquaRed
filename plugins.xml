@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+  <pyqgis_plugin name="AquaRed" version="1.0.0" plugin_id="aquared">
+    <description>Diseñador y Modelador Topológico de Redes de Agua Potable con Offset Vial, Acometidas, Normativa IDAAN y Exportación a EPANET</description>
+    <about>Plugin integral para diseño automatizado de acueductos según normativa IDAAN / MINSA.</about>
+    <version>1.0.0</version>
+    <qgis_minimum_version>3.22</qgis_minimum_version>
+    <qgis_maximum_version>3.99</qgis_maximum_version>
+    <homepage>https://github.com/MakxxKansca/AquaRed</homepage>
+    <file_name>AquaRed.zip</file_name>
+    <icon>icon.png</icon>
+    <author_name>MakxxKansca</author_name>
+    <download_url>https://raw.githubusercontent.com/MakxxKansca/AquaRed/main/AquaRed.zip</download_url>
+    <uploaded_by>MakxxKansca</uploaded_by>
+    <create_date>2026-10-11</create_date>
+    <update_date>2026-10-11</update_date>
+    <experimental>False</experimental>
+    <deprecated>False</deprecated>
+    <tracker>https://github.com/MakxxKansca/AquaRed/issues</tracker>
+    <repository>https://github.com/MakxxKansca/AquaRed</repository>
+    <tags>water supply,epanet,acueducto,idaan,redes de agua,pipe network,hydraulics,sanitary engineering</tags>
+  </pyqgis_plugin>
+</plugins>

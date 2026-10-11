@@ -1,21 +1,29 @@
-MIT License
+ACUERDO DE LICENCIA DE SOFTWARE Y DERECHOS DE AUTOR
+===================================================
+AQUARED - PLUGIN DE QGIS PARA DISEÑO DE REDES DE AGUA POTABLE
+Copyright (c) 2026 MakxxKansca. Todos los derechos reservados.
 
-Copyright (c) 2026 MakxxKansca
+POR FAVOR, LEA DETENIDAMENTE ESTE ACUERDO ANTES DE UTILIZAR EL SOFTWARE.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. TITULARIDAD Y DERECHOS DE PROPIEDAD INTELECTUAL
+El software "AquaRed", incluyendo pero no limitándose a su código fuente, arquitectura, algoritmos, interfaz gráfica, documentación, logotipos e iconos, es propiedad intelectual exclusiva de MakxxKansca ("el Autor"). Este software está protegido por las leyes de propiedad intelectual, derechos de autor y tratados internacionales.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. CONCESIÓN DE LICENCIA DE USO (FREEWARE)
+El Autor otorga a cualquier persona física o jurídica una licencia de uso no exclusiva, revocable, gratuita e intransferible para:
+ a) Instalar y ejecutar el plugin AquaRed dentro del software QGIS en cualquier número de equipos informáticos.
+ b) Utilizar el plugin para fines personales, académicos, de investigación o profesionales/comerciales en el diseño y modelado de redes de agua potable.
+ c) Distribuir o compartir los resultados obtenidos (planos, archivos EPANET .INP, tablas de cálculo y reportes generados) sin ninguna restricción ni obligación de pago de regalías.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. RESTRICCIONES ESTRICTAS SOBRE EL CÓDIGO FUENTE
+Queda terminantemente PROHIBIDO a cualquier usuario o tercero, salvo autorización expresa previa y por escrito del Autor:
+ a) Copiar, duplicar, reproducir o comercializar el código fuente del software, total o parcialmente.
+ b) Modificar, alterar, transformar, adaptar, crear obras derivadas o bifurcaciones (forks) del código fuente o de sus módulos.
+ c) Descompilar, desensamblar, aplicar ingeniería inversa o intentar extraer el código fuente, la lógica propietaria o los algoritmos para fines de apropiación o reinterpretación no autorizada.
+ d) Incorporar cualquier archivo, clase, función, método o porción del código de AquaRed en otros proyectos de software, complementos, librerías o aplicaciones, sean de código abierto o privativas.
+ e) Vender, alquilar, sublicenciar, redistribuir con fines comerciales o atribuirse la autoría o titularidad del software o de sus componentes.
+
+4. EXCLUSIÓN DE GARANTÍAS Y LÍMITE DE RESPONSABILIDAD
+El software se entrega "TAL CUAL" ("AS IS"), sin garantías de ningún tipo, expresas o implícitas, respecto a su funcionamiento ininterrumpido, ausencia de errores o adecuación para un fin particular. En ningún caso el Autor será responsable por daños directos, indirectos, incidentales, especiales o emergentes que deriven del uso o de la imposibilidad de uso del software.
+
+5. JURISDICCIÓN
+Cualquier controversia relacionada con el incumplimiento de estos términos quedará sujeta a la legislación aplicable en materia de derechos de autor y propiedad intelectual.

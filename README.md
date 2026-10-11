@@ -5,7 +5,7 @@
 ![AquaRed Icon](icon.png)
 
 [![QGIS Version](https://img.shields.io/badge/QGIS-3.22%20--%203.99-brightgreen.svg)](https://qgis.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Proprietary / Freeware](https://img.shields.io/badge/License-Proprietary%20%2F%20Freeware-red.svg)](LICENSE)
 [![Author](https://img.shields.io/badge/Author-MakxxKansca-orange.svg)](https://github.com/MakxxKansca)
 [![Issues](https://img.shields.io/github/issues/MakxxKansca/AquaRed)](https://github.com/MakxxKansca/AquaRed/issues)
 
@@ -74,20 +74,27 @@ Permite generar redes de tuberías matrices desplazadas a un offset paralelo con
 
 ## 📦 Instalación en QGIS
 
-### Método 1: Instalación desde archivo ZIP (Recomendado)
-1. Descarga [`AquaRed.zip`](https://github.com/MakxxKansca/AquaRed/archive/refs/heads/main.zip) desde este repositorio.
-2. Abre QGIS.
-3. Ve al menú superior: `Complementos` $\rightarrow$ `Administrar e instalar complementos...`
-4. Selecciona la pestaña lateral **Instalar a partir de ZIP**.
-5. Busca y selecciona el archivo `AquaRed.zip` y pulsa **Instalar complemento**.
+### Método 1: Descarga e Instalación Directa desde QGIS (Repositorio Personalizado)
+Puedes hacer que **AquaRed** aparezca en el buscador de complementos de QGIS e instalarlo o actualizarlo con 1 solo clic:
+1. En QGIS, ve a: `Complementos` $\rightarrow$ `Administrar e instalar complementos...`
+2. En la pestaña izquierda, selecciona **Opciones**.
+3. En la sección *Repositorios de complementos*, pulsa **Añadir**.
+4. Completa los campos:
+   - **Nombre:** `AquaRed Repository`
+   - **URL:** `https://raw.githubusercontent.com/MakxxKansca/AquaRed/main/plugins.xml`
+5. Pulsa **Aceptar**.
+6. Ahora ve a la pestaña **Todos** o **No instalados**, busca **AquaRed** y pulsa **Instalar complemento**. ¡Recibirás notificaciones automáticas cada vez que se publique una nueva versión!
 
-### Método 2: Instalación Manual
+### Método 2: Instalación desde Archivo ZIP
+1. Descarga el paquete [`AquaRed.zip`](https://raw.githubusercontent.com/MakxxKansca/AquaRed/main/AquaRed.zip).
+2. En QGIS, ve a: `Complementos` $\rightarrow$ `Administrar e instalar complementos...` $\rightarrow$ `Instalar a partir de ZIP`.
+3. Selecciona el archivo descargado y pulsa **Instalar complemento**.
+
+### Método 3: Instalación Manual
 Copia la carpeta `AquaRed` en el directorio de plugins de tu perfil de usuario de QGIS:
 - **Windows:** `%APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\AquaRed`
 - **Linux:** `~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/AquaRed`
 - **macOS:** `~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/AquaRed`
-
-Reinicia QGIS y activa la casilla **AquaRed** en el administrador de complementos.
 
 ---
 
@@ -136,6 +143,10 @@ AquaRed/
 
 ---
 
-## 📄 Licencia
+## 📄 Licencia y Términos de Uso
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este software se distribuye bajo **Licencia Propietaria de Uso Gratuito (Freeware)**. Todos los derechos reservados.
+- **Uso Autorizado:** Se permite la instalación, ejecución y uso libre del complemento en QGIS para cualquier proyecto de diseño de acueductos (personal, profesional o académico).
+- **Protección del Código Fuente:** Queda expresamente prohibida la copia, reproducción, modificación, ingeniería inversa, creación de obras derivadas o redistribución comercial del código fuente sin autorización previa por escrito del autor (**MakxxKansca**).
+
+Para consultar los términos detallados, revisa el archivo [LICENSE](LICENSE).

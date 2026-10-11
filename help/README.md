@@ -70,3 +70,16 @@
 | **Diámetro Mín. Ramal** | 3 pulgadas (82.1 mm int) | 2 pulgadas (55.7 mm int) |
 | **Factor Caudal Máx. Horario** | FMH = 2.00 | Kp = 2.16 |
 | **Rugosidad (C Hazen-Williams)**| 140 (PVC SDR-26) | 140 (PVC SDR-26) |
+
+---
+
+## 👤 Autor
+
+- **Autor:** **MakxxKansca**
+- **GitHub:** [@MakxxKansca](https://github.com/MakxxKansca)
+
+---
+
+## 📄 Licencia
+
+Este software está protegido por derechos de autor y se distribuye bajo **Licencia Propietaria de Uso Gratuito (Freeware)**. Todos los derechos reservados por MakxxKansca. Queda prohibida la copia, modificación o redistribución no autorizada del código fuente.
