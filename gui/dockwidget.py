@@ -3,7 +3,7 @@ AquaRed - Panel Principal de Control (QDockWidget)
 ==================================================
 Interfaz gráfica interactiva para el diseño integral de redes de agua potable.
 Incluye:
- - Selector de Perfiles de Configuración (Villa Esha, Rural San Pedro, Guardar/Cargar JSON).
+ - Selector de Perfiles de Configuración (Red Urbana, Red Rural, Guardar/Cargar JSON).
  - Conmutación síncrona Urbano / Rural (dotación, presiones normativas y diámetros mínimos).
  - Selectores de capas del proyecto con filtrado de geometría.
  - Asistente de Auto-Snapping y edición topológica.
@@ -47,7 +47,7 @@ from ..core.profile_manager import (
     obtener_perfil_predeterminado,
     guardar_perfil_a_archivo,
     cargar_perfil_desde_archivo,
-    PERFIL_RURAL_SAN_PEDRO
+    PERFIL_RURAL_MINSA
 )
 from .snapping_manager import SnappingManager
 
@@ -86,8 +86,8 @@ class AquaRedDockWidget(QDockWidget):
         h_prof.addWidget(QLabel("Perfil:"))
         self.cmb_perfil = QComboBox()
         self.cmb_perfil.addItems([
-            "Villa Esha (Predeterminado Urbano)",
-            "Comunidad Rural (MINSA / IDAAN 80 gal)",
+            "Red Urbana / Residencial (Norma IDAAN 100 gal)",
+            "Red Rural / Comunitaria (Norma MINSA 80 gal)",
             "Personalizado..."
         ])
         h_prof.addWidget(self.cmb_perfil)
@@ -286,7 +286,7 @@ class AquaRedDockWidget(QDockWidget):
         if index == 0:
             self.aplicar_perfil(obtener_perfil_predeterminado())
         elif index == 1:
-            self.aplicar_perfil(dict(PERFIL_RURAL_SAN_PEDRO))
+            self.aplicar_perfil(dict(PERFIL_RURAL_MINSA))
 
     def aplicar_perfil(self, config):
         """Carga un diccionario de configuración en los controles de la UI."""

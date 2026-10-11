@@ -110,7 +110,7 @@ AquaRed/
 │
 ├── core/                       # Motores de cálculo independientes de la GUI
 │   ├── idaan_rules.py          # Catálogo de tuberías y reglas de cálculo
-│   ├── profile_manager.py      # Gestor de perfiles JSON (Villa Esha, San Pedro)
+│   ├── profile_manager.py      # Gestor de perfiles JSON (Red Urbana, Red Rural, Personalizado)
 │   ├── topology_engine.py      # Geometría, offset, acometidas, grafo conexo y válvulas
 │   └── epanet_exporter.py      # Generador nativo ASCII de archivos .INP
 │

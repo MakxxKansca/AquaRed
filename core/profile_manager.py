@@ -2,14 +2,14 @@
 AquaRed - Gestor de Perfiles de Configuración (JSON)
 ===================================================
 Permite guardar, cargar y restaurar perfiles de diseño hidráulico,
-incluyendo el perfil predeterminado basado en el proyecto Villa Esha.
+incluyendo plantillas predeterminadas para proyectos urbanos y rurales.
 """
 
 import json
 import os
 
-PERFIL_DEFAULT_ESHA = {
-    "nombre_perfil": "Villa Esha (Predeterminado Urbano)",
+PERFIL_URBANO_IDAAN = {
+    "nombre_perfil": "Red Urbana / Residencial (Norma IDAAN 100 gal)",
     "clasificacion": "urbano",
     "dotacion_gal_hab_dia": 100.0,
     "presion_min_psi": 20.0,
@@ -22,7 +22,7 @@ PERFIL_DEFAULT_ESHA = {
     "profundidad_zanja_m": 1.15,
     "ancho_zanja_m": 0.60,
     "altura_torre_tanque_m": 15.00,
-    "cota_tanque_terreno_m": 102.58,
+    "cota_tanque_terreno_m": 100.00,
     "tolerancia_snapping_m": 0.75,
     "umbral_acometida_m": 15.0,
     "fuente_calles": "osm",      # 'osm' o 'layer'
@@ -38,8 +38,8 @@ PERFIL_DEFAULT_ESHA = {
     }
 }
 
-PERFIL_RURAL_SAN_PEDRO = {
-    "nombre_perfil": "Comunidad Rural (MINSA / IDAAN 80 gal)",
+PERFIL_RURAL_MINSA = {
+    "nombre_perfil": "Red Rural / Comunitaria (Norma MINSA 80 gal)",
     "clasificacion": "rural",
     "dotacion_gal_hab_dia": 80.0,
     "presion_min_psi": 14.0,
@@ -52,7 +52,7 @@ PERFIL_RURAL_SAN_PEDRO = {
     "profundidad_zanja_m": 1.10,
     "ancho_zanja_m": 0.60,
     "altura_torre_tanque_m": 15.00,
-    "cota_tanque_terreno_m": 43.81,
+    "cota_tanque_terreno_m": 50.00,
     "tolerancia_snapping_m": 0.75,
     "umbral_acometida_m": 30.0,
     "fuente_calles": "osm",
@@ -68,9 +68,13 @@ PERFIL_RURAL_SAN_PEDRO = {
     }
 }
 
+# Alias de compatibilidad
+PERFIL_DEFAULT_ESHA = PERFIL_URBANO_IDAAN
+PERFIL_RURAL_SAN_PEDRO = PERFIL_RURAL_MINSA
+
 def obtener_perfil_predeterminado():
-    """Retorna una copia del perfil predeterminado de Villa Esha."""
-    return json.loads(json.dumps(PERFIL_DEFAULT_ESHA))
+    """Retorna una copia del perfil predeterminado urbano."""
+    return json.loads(json.dumps(PERFIL_URBANO_IDAAN))
 
 def guardar_perfil_a_archivo(config_dict, file_path):
     """Guarda un diccionario de configuración como archivo JSON formateado."""
