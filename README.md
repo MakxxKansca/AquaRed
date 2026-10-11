@@ -58,6 +58,50 @@ Permite generar redes de tuberías matrices desplazadas a un offset paralelo con
 
 ---
 
+## 🗺️ Insumos y Capas del Proyecto (Panel "2. Capas del Proyecto")
+
+La sección **"2. Capas del Proyecto"** en el panel lateral de AquaRed es el puente de conexión entre la información geográfica de tu proyecto en QGIS y los motores de cálculo hidráulico y topológico.
+
+![Sección Capas del Proyecto](https://raw.githubusercontent.com/MakxxKansca/AquaRed/main/icon.png)
+
+### ❓ ¿Por qué los campos desplegables aparecen vacíos al abrir el plugin?
+Los 4 selectores son controles nativos de QGIS (`QgsMapLayerComboBox`). **No requieren buscar archivos en carpetas**, sino que leen dinámicamente las capas que ya tienes abiertas en el panel de **Capas** (*Layers*) de QGIS:
+* Si abres un proyecto nuevo o en blanco de QGIS, los desplegables se mostrarán vacíos.
+* Tan pronto arrastres o cargues tus capas espaciales al lienzo de QGIS, AquaRed filtrará automáticamente aquellas compatibles por tipo de geometría y las listará en su respectivo menú.
+
+---
+
+### 📋 Descripción y Rol de las 4 Capas Base
+
+| Campo en AquaRed | Tipo de Capa Requerida | Formatos Comunes | Rol en el Flujo de Diseño |
+| :--- | :---: | :---: | :--- |
+| **Ejes Viales / Calles** | **Líneas**<br>(`LineString` / `MultiLineString`) | `.shp`, `.gpkg`, `.geojson` | Representa los ejes centrales de calles, avenidas o servidumbres de paso (obtenidos de OpenStreetMap, CAD o topografía). Sirven como la directriz maestra para calcular las **tuberías matrices con offset paralelo** (ej. 5.0 m), preservando 100% las curvas reales. |
+| **Viviendas / Huellas** | **Puntos o Polígonos**<br>(`Point` / `Polygon`) | `.shp`, `.gpkg`, `.geojson` | Representa los lotes, viviendas o huellas de edificación. Se utiliza para: <br>1. Trazar las **acometidas domiciliarias de 1/2"** perpendiculares a la tubería más cercana.<br>2. Contabilizar la población tributaria por tramo y calcular el **caudal de diseño (QMD)** según la norma oficial IDAAN. |
+| **Ráster DEM** | **Ráster de Elevación**<br>(`RasterLayer` / DEM / MDT) | `.tif`, `.asc`, `.dem` | Modelo Digital de Elevación del terreno (levantamientos con dron/LIDAR o satelitales como SRTM o ALOS PALSAR). Permite extraer automáticamente la **cota de terreno (`cota_terreno`)** y calcular la **cota de fondo de zanja (`cota_tubo`)** en cada nodo. |
+| **Tanque / Fuente** | **Puntos**<br>(`Point`) | `.shp`, `.gpkg`, `.geojson` | Punto único que marca la ubicación del tanque elevado de almacenamiento o fuente de suministro. Define el nodo maestro de alimentación (`TK-001`) al que se le suma la cota del terreno más la altura de la torre para establecer la carga piezométrica inicial en EPANET. |
+
+---
+
+### 📐 Requisitos Técnicos de las Capas
+
+1. **Sistema de Coordenadas Proyectado (Métrico):**
+   - Todas las capas deben estar en el mismo Sistema de Referencia de Coordenadas (CRS) proyectado métrico, por ejemplo **UTM WGS 84** (ej. `EPSG:32617 - WGS 84 / UTM zone 17N` para Panamá).
+   - *Evita usar coordenadas geográficas angulares (grados, `EPSG:4326`)*, ya que los cálculos de offsets, zanjas y distancias euclidianas requieren unidades en **metros**.
+2. **Topología de Ejes Viales:**
+   - Las líneas de calles deben estar segmentadas en intersecciones o formar una red continua para que los tramos de tubería puedan heredar la conectividad adecuadamente.
+3. **Punto del Tanque:**
+   - La capa del tanque debe contener al menos 1 entidad de punto. Si contiene varias, AquaRed tomará el punto de abastecimiento principal.
+
+---
+
+### 🚀 Cómo Usarlas en 3 Pasos
+
+1. **Cargar en QGIS:** Arrastra tus archivos de calles, casas, DEM y tanque directamente a la ventana de QGIS.
+2. **Asignar en el Panel:** En la sección **2. Capas del Proyecto**, selecciona con un clic la capa correspondiente en cada uno de los 4 menús desplegables.
+3. **Ejecutar Diseño:** Haz clic en **`⚡ EJECUTAR FLUJO COMPLETO`**. AquaRed procesará los insumos en secuencia matemática y cargará en tu mapa la red terminada junto con el archivo `.INP` listo para EPANET.
+
+---
+
 ## ⚙️ Criterios Normativos Integrados
 
 | Parámetro | Zona Urbana (IDAAN) | Zona Rural (MINSA / IDAAN Rural) |

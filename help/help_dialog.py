@@ -109,7 +109,51 @@ class AquaRedHelpDialog(QDialog):
         """)
         tabs.addTab(browser_metodo, "Asignación IDAAN")
 
-        # TAB 3: Offset Vial y Topología
+        # TAB 3: Capas del Proyecto
+        browser_capas = QTextBrowser()
+        browser_capas.setHtml("""
+        <h2>Insumos y Capas del Proyecto (Panel 2)</h2>
+        <p>AquaRed interactúa dinámicamente con las capas cargadas en el panel lateral de <b>Capas</b> de QGIS mediante controles inteligentes (<code>QgsMapLayerComboBox</code>):</p>
+        
+        <div style="background-color:#eef7ff; padding:10px; border-left:4px solid #007acc; margin-bottom:12px;">
+            <b>¿Por qué los desplegables aparecen vacíos al inicio?</b><br>
+            Si tu proyecto de QGIS está en blanco o recién iniciado, los menús no muestran opciones. Tan pronto arrastres o abras tus archivos (<code>.shp</code>, <code>.gpkg</code>, <code>.geojson</code>, <code>.tif</code>) en QGIS, AquaRed detectará automáticamente la geometría de cada capa y la listará en el desplegable correspondiente.
+        </div>
+
+        <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; width:100%;">
+            <tr style="background-color:#e6f2ff;">
+                <th>Campo en Panel</th>
+                <th>Tipo de Geometría</th>
+                <th>Función en el Diseño</th>
+            </tr>
+            <tr>
+                <td><b>Ejes Viales / Calles</b></td>
+                <td>Líneas (<code>LineString</code>)</td>
+                <td>Ejes viales base (descargados de OSM o trazados en CAD). Directriz para calcular las tuberías principales con offset paralelo (ej. 5.0 m).</td>
+            </tr>
+            <tr>
+                <td><b>Viviendas / Huellas</b></td>
+                <td>Puntos o Polígonos (<code>Point</code> / <code>Polygon</code>)</td>
+                <td>Ubicación de lotes o casas. Permite trazar las acometidas de 1/2" y calcular la población tributaria y caudal de diseño por tramo (IDAAN).</td>
+            </tr>
+            <tr>
+                <td><b>Ráster DEM</b></td>
+                <td>Ráster de Elevación (<code>.tif</code>)</td>
+                <td>MDT topográfico. Permite muestrear la cota de terreno (<code>cota_terreno</code>) y la cota de fondo de zanja (<code>cota_tubo</code>) de cada nodo.</td>
+            </tr>
+            <tr>
+                <td><b>Tanque / Fuente</b></td>
+                <td>Puntos (<code>Point</code>)</td>
+                <td>Ubicación del tanque de reserva o fuente (nodo <code>TK-001</code>). Define la cota de terreno + altura de torre para la carga hidráulica total en EPANET.</td>
+            </tr>
+        </table>
+
+        <h3>Recomendación Técnica:</h3>
+        <p>Todas las capas deben estar en el mismo <b>Sistema de Coordenadas Proyectado (Métrico)</b>, por ejemplo <b>UTM WGS 84</b> (ej. <i>EPSG:32617</i> para Panamá), para garantizar que las distancias, offsets y cotas se calculen en metros exactos.</p>
+        """)
+        tabs.addTab(browser_capas, "Capas del Proyecto")
+
+        # TAB 4: Offset Vial y Topología
         browser_offset = QTextBrowser()
         browser_offset.setHtml("""
         <h2>Trazado con Offset Vial y Topología Continua</h2>
@@ -122,7 +166,7 @@ class AquaRedHelpDialog(QDialog):
         """)
         tabs.addTab(browser_offset, "Offset y Geometría")
 
-        # TAB 4: Exportación EPANET
+        # TAB 5: Exportación EPANET
         browser_epanet = QTextBrowser()
         browser_epanet.setHtml("""
         <h2>Exportación a EPANET (.INP)</h2>
@@ -135,7 +179,7 @@ class AquaRedHelpDialog(QDialog):
         """)
         tabs.addTab(browser_epanet, "Exportación EPANET")
 
-        # TAB 5: Personalización de Perfiles JSON
+        # TAB 6: Personalización de Perfiles JSON
         browser_json = QTextBrowser()
         browser_json.setHtml("""
         <h2>Guía de Personalización de Perfiles JSON</h2>
